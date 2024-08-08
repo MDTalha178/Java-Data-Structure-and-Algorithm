@@ -35,3 +35,4 @@ Below is a list of the data structures implemented in this repository:
   * Linked Lists
   * Stacks
   * Queues
+  * Greedy Algorithm
