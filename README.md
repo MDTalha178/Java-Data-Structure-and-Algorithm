@@ -19,7 +19,7 @@ This repository contains Java implementations of common data structures and algo
 
 To get started, clone the repository to your local machine using the following command:
 
-git clone https://github.com/your-username/dsa-concepts-java.git
+git clone https://github.com/MDTalha178/Java-Data-Structure-and-Algorithm.git
 
 Data Structures
 Below is a list of the data structures implemented in this repository:
