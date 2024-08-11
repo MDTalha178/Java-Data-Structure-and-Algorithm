@@ -15,7 +15,7 @@ public class string_permutation {
         }
     }
     public static void main(String[] args) {
-        String str = "abc";
+        String str = "bca";
         String ans = "";
         printpermutation(str, ans);
     }
