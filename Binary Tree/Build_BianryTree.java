@@ -40,7 +40,14 @@ class Node{
  * InnerBuild_BianryTree
  */
 class InnerBuild_BianryTree {
-    public static int idx =-1;
+    public int idx =-1;
+    InnerBuild_BianryTree(int idx){
+        this.idx = idx;
+    }
+
+    InnerBuild_BianryTree() {
+        this.idx = -1; 
+    }
     public Node buildBainaryTree(int node[]){
         idx++;
         if(node[idx] == -1){
