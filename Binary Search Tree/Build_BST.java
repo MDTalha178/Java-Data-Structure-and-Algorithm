@@ -37,7 +37,15 @@ class Node {
 
 // build BST class
 class BST{
-    public static int idx = -1;
+    int idx;
+
+    BST(int idx){
+        this.idx = -1;
+    }
+
+    BST(){
+        this.idx = -1;
+    }
 
     public  Node buildBST(int node[], int max, int min){
         idx++;
