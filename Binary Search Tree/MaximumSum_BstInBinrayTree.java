@@ -26,7 +26,7 @@ public class MaximumSum_BstInBinrayTree {
     }
 
     public static void main(String args[]){
-        // here we create BST Tree
+        // here we create BST Tree 
         int nodes[] = {5,9,6,8,-1,-1,7,-1,-1,-1,2,-1,-1};
         InnerBuild_BianryTree binaryTree = new InnerBuild_BianryTree();
 
