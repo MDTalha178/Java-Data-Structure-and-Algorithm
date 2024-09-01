@@ -23,6 +23,7 @@ public class SearchInTries {
 class TiesNode{
     TiesNode children[] = new TiesNode[26];
     boolean endOfWord = false;
+    String word;
 
 
     TiesNode(){
@@ -53,6 +54,7 @@ class BuildTrie{
         }
 
         curr.endOfWord = true;
+        curr.word = word;
     }
 
     // get root
