@@ -18,7 +18,7 @@ public class LongestWordInDicronary {
 
     }
     public static void main(String args[]){
-        String s1[] = {"a","banana","app","appl","ap","apply","apple"};
+        String s1[] = {"ap","banana","app","appl","ap","apply","apple"};
 
         BuildTrie tries = new BuildTrie();
 
