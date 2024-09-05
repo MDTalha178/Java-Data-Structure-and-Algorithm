@@ -1,31 +1,21 @@
-import java.util.ArrayList;
-import java.util.Queue;import java.util.*;
+import java.util.*;;
+public class DFS {
+    public static void dfs(ArrayList<Edge>graph[], int curr, boolean visited[]){
 
-public class BFS {
-    public static void bfs(ArrayList<Edge>graph[], int vertex){
+        System.out.print(curr + " ");
+        visited[curr] = true;
 
-        Queue<Integer>q = new LinkedList<>();
-        boolean visited[] = new boolean[graph.length];
-        q.add(0);
-
-        while (!q.isEmpty()) {
-            
-            int curr = q.remove();
-            if(!visited[curr]){
-                System.out.print(curr + " ");
-                visited[curr] = true;
-                for(int i =0; i<graph[curr].size(); i++){
-                    Edge e = graph[curr].get(i);
-                    q.add(e.destination);
-                }
+        for(int i =0; i<graph[curr].size(); i++){
+            Edge e = graph[curr].get(i);
+            if(!visited[e.destination]){
+                dfs(graph, e.destination, visited);
             }
-
         }
+
 
     }
     public static void createGraph(ArrayList<Edge>graph[], int vertex){
-        
-        // initalize array 
+         // initalize array 
         for(int i=0; i<vertex; i++){
             graph[i] = new ArrayList<>();
         }
@@ -53,26 +43,26 @@ public class BFS {
         graph[4].add(new Edge(4, 1, 5));
 
         // here we will add 5 vertex
-        graph[3].add(new Edge(5, 1, 3));
-        graph[3].add(new Edge(5, 1, 4));
-        graph[3].add(new Edge(5, 1, 6));
+        graph[5].add(new Edge(5, 1, 3));
+        graph[5].add(new Edge(5, 1, 4));
+        graph[5].add(new Edge(5, 1, 6));
 
          // here we will add 5 vertex
-        graph[3].add(new Edge(6, 1, 3));
-        graph[3].add(new Edge(6, 1, 4));
-
+        graph[6].add(new Edge(6, 1, 3));
+        graph[6].add(new Edge(6, 1, 4));
     }
-
+    
     public static void main(String args[]){
 
-        int vertex = 7;
-        ArrayList<Edge>[]graph = new ArrayList[vertex];
+        int vertex = 8;
+        ArrayList<Edge>graph[] = new ArrayList[vertex];
 
         // here we will create our graph
         createGraph(graph, vertex);
 
-        bfs(graph, vertex);
-        
+        boolean visited[] = new boolean[graph.length];
+        dfs(graph, 0, visited);
+
     }
 }
 
@@ -86,5 +76,6 @@ class Edge{
         this.src = src;
         this.weight = weight;
         this.destination = destination;
+
     }
 }
