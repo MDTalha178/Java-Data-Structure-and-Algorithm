@@ -76,10 +76,10 @@ public class MinimumPathToLeaf {
                 visited[curr] = true;
                 for(int i=0; i<graph[curr].size(); i++){
                     Edge e = graph[curr].get(i);
-                    count++;
                     if(e.destination > graph.length | graph[e.destination].size() == 0){
-                        return count-1;
+                        return count;
                     }
+                    count++;
                     garph_queue.add(e.destination);
                 }
             }
