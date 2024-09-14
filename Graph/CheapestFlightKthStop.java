@@ -30,8 +30,10 @@ public class CheapestFlightKthStop {
                 ditsance[i] = Integer.MAX_VALUE;
             }
         }
-        System.out.println("Called");
+
+
         q.add(new Info(src, 0,0));
+        
         while (!q.isEmpty()) {
             Info curr = q.remove();
 
@@ -46,7 +48,6 @@ public class CheapestFlightKthStop {
 
                 if(ditsance[u] != Integer.MAX_VALUE && curr.cost+w < ditsance[v] && curr.stops <=k){
                     ditsance[v] = curr.cost+w;
-                    System.out.print("Innde");
                     q.add(new Info(v, curr.stops+1, ditsance[v]));
                 }
             }
@@ -56,7 +57,6 @@ public class CheapestFlightKthStop {
     }
     
     public static void main(String args[]){
-        System.out.println("STrted");
         int arr[][] = {{0,1,100}, {1,2,100},{2,0,100}, {1,3,600}, {2,3,200}};
         ArrayList<Edge>graph[] = new ArrayList[4];
         createGraph(arr, graph);
