@@ -43,6 +43,47 @@ public class KnapSack0To1 {
             return dp[index-1][weight];
         }
     }
+
+    public static int maxProfitTabulationApproach(int value[], int wt[], int weight){
+
+        int dp[][] = new int[value.length + 1][weight + 1];
+
+        for(int i=0; i<dp.length; i++){
+            dp[i][0] = 0;
+        }
+
+        for(int j =0; j<dp[0].length; j++){
+            dp[0][j] = 0;
+        }
+
+        // tabulation
+        for(int i =1; i<dp.length; i++){
+            for(int j=1; j<dp[i].length; j++){
+
+                int val = value[i-1];
+                int we = wt[i-1];
+
+                if(we <= j){
+
+                    // include condition
+                    int ans1 = val + dp[i-1][j-we];
+
+                    // exclude condition
+                    int ans2 = dp[i-1][j];
+                    dp[i][j] = Math.max(ans1, ans2);
+                }else{
+                    dp[i][j] = dp[i-1][j];
+                }
+            }
+        }
+        for(int i=0; i<dp.length; i++){
+            for(int j =0; j<dp[i].length; j++){
+                System.out.print(dp[i][j] + " ");
+            }
+            System.out.println();
+        }
+        return dp[value.length][weight];
+    }
     
     public static void main(String args[]){
 
@@ -65,5 +106,10 @@ public class KnapSack0To1 {
         }
         int maxProfitMemoization = maxProfitMemoization(value, wt, weight, index, dp);
         System.out.println("Memoization Approach " + maxProfitMemoization);
+
+
+        // Tabulation Approach
+        int maxProfitTabulation = maxProfitTabulationApproach(value, wt, weight);
+        System.out.println("Tabulation Approach "+  maxProfitTabulation);
     }
 }

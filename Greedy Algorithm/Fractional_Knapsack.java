@@ -6,6 +6,7 @@ public class Fractional_Knapsack {
     public static int getMaxProfit(int price[], int weight[], int capacity){
         int maxProfit =0;
         double ratio[][] = new double[price.length][2];
+        
         // here we will find our ratio
         for(int i = 0; i<price.length; i++){
             ratio[i][0] = i;
