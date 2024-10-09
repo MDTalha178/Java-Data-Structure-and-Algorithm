@@ -49,7 +49,7 @@ public class spiral_matrix {
     }
 
     public static void main(String args[]){
-        int arr[][] = new int[3][3];
+        int arr[][] = new int[3][4];
 
         int row = arr.length, col = arr[0].length;
         // here we will take input 
